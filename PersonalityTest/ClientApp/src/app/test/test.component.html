@@ -1,0 +1,84 @@
+<h2 class="header">Personality Test</h2>
+<!--<form #form="ngForm" ">
+  <mat-form-field>
+    <input matInput
+           placeholder="name"
+           type="text"
+           name="name"
+           [(ngModel)]="name"
+           #nameControl="ngModel"
+           required>
+    <mat-error *ngIf="nameControl.invalid">requiredField</mat-error>
+  </mat-form-field>
+  <div *ngFor="let question of questions">
+    <mat-form-field>
+      <label id="radio-group-label">{{question.text}}</label>-->
+
+      <!--<mat-form-field>
+    <input class="radio-group"
+           name="questionText"
+           [(ngModel)]="name"
+           #questionControl="ngModel"
+           required>
+    <mat-radio-button class="example-radio-button" *ngFor="let option of question.options" [value]="option.value">
+      {{option.text}}
+    </mat-radio-button>
+    </mat-radio-group>
+  </mat-form-field>-->
+
+      <!--<div *ngFor="let option of question.options; index as i">
+        <label for="{{option.text}}"> {{option.text}}  </label>
+        <input matInput type="radio" id="{{option.value}}" value="{{option.value}}" name="option" [(ngModel)]="option.value">
+      </div>
+    </mat-form-field>
+</div>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">send</button>
+</form>-->
+
+<!--<form [formGroup]="testForm" (ngSubmit)="send(testForm)">
+  <mat-form-field appearance="fill">
+    <mat-label>enter your name</mat-label>
+    <input matInput formControlName="name" placeholder="Your name">
+    <div *ngIf="testForm.get('name').invalid && (testForm.get('name').dirty || testForm.get('name').touched)">
+      Please provide a name.
+    </div>
+  </mat-form-field>
+
+  <div  formArrayName="options">
+
+  <div *ngFor="let question of questions">
+    <label id="radio-group-label">{{question.text}}</label>
+    <mat-radio-group >
+      <mat-radio-button class="example-radio-button" *ngFor="let option of question.options" [value]="option.value">
+        {{option.text}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  </div>-->
+  <!--<div class="errorMessage" *ngIf="!isValid">invalid</div>-->
+  <!--<button mat-raised-button color="primary" type="submit">send</button>
+</form>-->
+
+<form [formGroup]="testForm" (ngSubmit)="send()">
+  <mat-form-field appearance="fill">
+    <mat-label>enter your name</mat-label>
+    <input matInput formControlName="name" placeholder="Your name">
+    <!--<div *ngIf="testForm.get('name').invalid && (testForm.get('name').dirty || testForm.get('name').touched)">
+      Please provide a name.
+    </div>-->
+  </mat-form-field>
+    <div formArrayName="questionse">
+
+    <div  *ngFor="let question of questions; let i = index">
+      <label id="radio-group-label">{{question.text}}</label>
+      <mat-radio-group formControlName="options">
+        <mat-radio-button *ngFor="let option of question.options" [value]="option.value">
+          {{option.text}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    </div>
+
+  <!--<div class="errorMessage" *ngIf="!isValid">invalid</div>-->
+  <button mat-raised-button color="primary" type="submit">send</button>
+</form>

@@ -1,0 +1,8 @@
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.material-icons {
+  margin-left: 8px;
+}
