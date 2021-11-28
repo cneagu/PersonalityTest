@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalityTest.Infrasturct
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{A238C065-16E2-48DE-AB80-2FA842DF09CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalityTest.Data", "PersonalityTest.Data\PersonalityTest.Data.csproj", "{F56F3D51-69C8-4E25-961C-FCB0CBDEB150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalityTest.Data", "PersonalityTest.Data\PersonalityTest.Data.csproj", "{F56F3D51-69C8-4E25-961C-FCB0CBDEB150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalityTest.Tests", "PersonalityTest.Tests\PersonalityTest.Tests.csproj", "{25B9E4F9-785C-4A82-80F2-EF3748162C2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F56F3D51-69C8-4E25-961C-FCB0CBDEB150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F56F3D51-69C8-4E25-961C-FCB0CBDEB150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F56F3D51-69C8-4E25-961C-FCB0CBDEB150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B9E4F9-785C-4A82-80F2-EF3748162C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B9E4F9-785C-4A82-80F2-EF3748162C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B9E4F9-785C-4A82-80F2-EF3748162C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B9E4F9-785C-4A82-80F2-EF3748162C2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{5EE49443-3A9D-442C-83EC-50EF9C431AF0} = {2054E401-D955-44EF-86B0-2C392540FB5E}
 		{50F48E3B-8B27-4565-B456-4011D6B8F1C3} = {D53C2857-94C6-427E-AFA1-2084D944E1FA}
 		{F56F3D51-69C8-4E25-961C-FCB0CBDEB150} = {A238C065-16E2-48DE-AB80-2FA842DF09CC}
+		{25B9E4F9-785C-4A82-80F2-EF3748162C2A} = {2054E401-D955-44EF-86B0-2C392540FB5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F81C17D-F021-49B0-BB6C-AFC159DDC242}

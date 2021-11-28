@@ -9,10 +9,10 @@ exports.__esModule = true;
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
-var toolbar_1 = require("@angular/material/toolbar");
-var icon_1 = require("@angular/material/icon");
 var app_component_1 = require("./app.component");
 var app_routing_module_1 = require("./app-routing.module");
+var toolbar_1 = require("@angular/material/toolbar");
+var icon_1 = require("@angular/material/icon");
 var animations_1 = require("@angular/platform-browser/animations");
 var AppModule = /** @class */ (function () {
     function AppModule() {

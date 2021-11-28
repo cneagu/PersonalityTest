@@ -2,7 +2,7 @@
 {
     public interface ITestResource
     {
-        Question[] GetGuestions();
+        Question[] GetQuestions();
         List<Option> GetOptions();
         List<Option> GetOptionsByID(Guid id);
     }

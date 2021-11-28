@@ -14,7 +14,7 @@ namespace PersonalityTest.Resource
             this.repository = repository;
             this.logger = logger;
         }
-        public Question[] GetGuestions()
+        public Question[] GetQuestions()
         {
             try
             {

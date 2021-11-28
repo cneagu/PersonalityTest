@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var home_component_1 = require("./home.component");
 var router_1 = require("@angular/router");
 var card_1 = require("@angular/material/card");
 var button_1 = require("@angular/material/button");
+var home_component_1 = require("./home.component");
 var routes = [
     {
         path: "",

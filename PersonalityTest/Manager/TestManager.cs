@@ -1,6 +1,6 @@
 ﻿using PersonalityTest.Infrasturcture;
+using PersonalityTest.Resource;
 using PersonalityTest.Resource.Contract;
-using System.Text;
 
 namespace PersonalityTest.Manager
 {
@@ -13,8 +13,7 @@ namespace PersonalityTest.Manager
         }
         public Contract.Question[] GetQuestions()
         {
-            Question[] result = testResource.GetGuestions();
-
+            Question[] result = testResource.GetQuestions();
 
             if (result == null || result.Length == 0)
                 return null;
@@ -31,32 +30,41 @@ namespace PersonalityTest.Manager
         public string GetPersonalityType(Contract.Question[] questions)
         {
             int score = 0;
+            int numberOfQuestions = questions.Length;
             foreach (Contract.Question question in questions)
             {
-                score+=question.Value;
+                score += question.Value;
             }
 
-            if (score > 14)
+            int extrovert = numberOfQuestions * 3;
+            int introvert = numberOfQuestions * 2;
+            int extrovertOutFirst = introvert;
+            int extrovertOutSecond = introvert + ((extrovert - introvert) / 2);
+
+            if (score >= extrovert)
             {
-                return "Your personality is Extrovert";
-            } 
-            else if(score < 11)
-            {
-                return "Your personality is Introvert";
+                return Personality.Extrovert;
             }
-            else if (score == 11 | score == 12)
-                return "Your personality is Extrovert but your inner personality is Introvert";
+            else if (score <= introvert)
+            {
+                return Personality.Introvert;
+            }
+            else if (score > extrovertOutFirst && score <= extrovertOutSecond)
+                return Personality.IntrovertOut;
             else
-                return "Your personality is Introvert but your inner personality is Extrovert";
+                return Personality.ExtrovertOut;
         }
 
         private Question[] GetTestQuestions(Question[] questions)
         {
-            Question[] result = new Question[5]; 
-            Random r = new();
-            var position = Enumerable.Range(0, 9).OrderBy(x => r.Next()).Take(5).ToArray();
+            int range = questions.Length > 5 ? 5 : questions.Length;
+            Question[] result = new Question[range];
 
-            for (int i = 0; i < 5; i++)
+            Random r = new();
+            int max = range > 5 ? 9 : range;
+            var position = Enumerable.Range(0, max).OrderBy(x => r.Next()).Take(range).ToArray();
+
+            for (int i = 0; i < range; i++)
             {
                 result[i] = questions[position[i]];
             }
