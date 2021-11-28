@@ -1,0 +1,42 @@
+:host {
+  min-height: 400px;
+  max-width: 850px;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+  border-radius: 16px;
+}
+
+.header{
+  text-align: center;
+  margin-top: 0px;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.question {
+  padding-bottom: 12px;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  flex-direction: column;
+}
+
+label{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.buttons {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

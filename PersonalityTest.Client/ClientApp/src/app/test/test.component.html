@@ -1,0 +1,25 @@
+<h2 class="header">Test: Are you an introvert or an extrovert?</h2>
+<form [formGroup]="form" (ngSubmit)="send()">
+  <mat-form-field appearance="fill">
+    <mat-label>enter your name</mat-label>
+    <input matInput formControlName="name" placeholder="Your name" [(ngModel)]="testModel.name">
+  </mat-form-field>
+  <ng-container formArrayName="questions">
+    <div *ngFor="let question of questions.controls; let qIndex = index">
+      <div class="question" [formGroupName]="qIndex">
+        <label>{{qIndex + 1}}. {{question?.value?.text}}</label>
+        <mat-radio-group class="option" formArrayName="options">
+          <mat-radio-button *ngFor="let option of options(question).controls;let oIndex = index"
+                            [value]="option?.value?.value"
+                            (change)="radioChange($event,question.value.id)">
+            {{option?.value?.text}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  </ng-container>
+  <div class="buttons">
+  <button mat-raised-button [disabled]="!form.valid || !testModel.isValid" color="primary" type="submit">send</button>
+  <button mat-raised-button [disabled]="!isTestComplete" (click)="refresh()" color="accent" >Reset Test</button>
+  </div>
+</form>
